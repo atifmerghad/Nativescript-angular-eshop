@@ -1,0 +1,18 @@
+//@import "~@nativescript/theme/core";
+//@import "~@nativescript/theme/blue"; // Or any other color theme (default === blue)
+
+@import "./styles/variables";
+@import "./styles/buttons";
+@import "./styles/utilities";
+@import "./styles/spacings";
+
+.RTL {
+  * {
+    font-family: $rtl-font-family;
+  }
+}
+.LTR {
+  * {
+    font-family: $ltr-font-family;
+  }
+}

@@ -1,0 +1,48 @@
+<ns-page [header]="{ title: 'Sign In', backEnabled: true, scroll: true  }">
+
+    <StackLayout height="100%">
+        <GridLayout rows="auto,*,auto">
+            <StackLayout row="0" marginTop="24">
+                <Label text="{{ 'shared.hint' | L}}" class="h2 m-12"></Label>
+                <TextField class="form-control" hint="{{ 'shared.hint' | L}}" [(ngModel)]="loginForm.username"
+                    keyboardType="email">
+                </TextField>
+
+                <Label text="{{ 'shared.hint' | L}}" class="h2 m-12"></Label>
+
+                <GridLayout [columns]="isRtl?'auto,*':'*,auto'" class="form-control">
+                    <TextField [col]="isRtl?'1':'0'" hint="⬤ ⬤ ⬤ ⬤ ⬤ ⬤" keyboardType="email" [secure]="!showPassword"
+                        [textAlignment]="isRtl ? 'right' : 'left'">
+                    </TextField>
+                    <Label [col]="isRtl?'0':'1'" text="👁" (tap)="showHidePassword()"></Label>
+                </GridLayout>
+
+                <Button text="{{ 'Sign In' | L}}" (tap)="loginUser()" class="btn btn-primary"
+                    fontFamily="{{(!isRtl)?'Almarai,Almarai-Bold':'Raleway,Raleway-Bold'}}"></Button>
+
+                <Label text="{{ 'Sign in by social' | L}}" class="body2 m-12" textAlignment="center"></Label>
+
+                <StackLayout>
+
+                    <GridLayout columns="*,auto,*">
+                        <Button col="0" text="{{ 'Facebook' | L}}" (tap)="loginUser()" class="btn btn-default"
+                            fontFamily="{{(!isRtl)?'Almarai,Almarai-Bold':'Raleway,Raleway-Bold'}}"></Button>
+                        <Button col="2" text="{{ 'Google' | L}}" (tap)="loginUser()" class="btn btn-default"
+                            fontFamily="{{(!isRtl)?'Almarai,Almarai-Bold':'Raleway,Raleway-Bold'}}"></Button>
+                    </GridLayout>
+
+                </StackLayout>
+
+            </StackLayout>
+            <StackLayout row="2">
+                <Label class="body2 m-12" textAlignment="center" [nsRouterLink]="['/register']">
+                    <FormattedString>
+                        <Span text="{{ 'If you do not have account, ' | L}}"></Span>
+                        <Span text="{{ 'Sign Up' | L}}" [nsRouterLink]="['/register']" color="#364fd4"></Span>
+                    </FormattedString>
+                </Label>
+            </StackLayout>
+
+        </GridLayout>
+    </StackLayout>
+</ns-page>

@@ -1,0 +1,12 @@
+@import "app";
+
+.RTL {
+  TextField {
+    text-align: right;
+  }
+}
+.LTR {
+  TextField {
+    text-align: left;
+  }
+}

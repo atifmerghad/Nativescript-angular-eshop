@@ -1,0 +1,18 @@
+<StackLayout height="100%" [ngClass]="isRtl?'RTL':'LTR'">
+    <StackLayout class="page">
+        <GridLayout rows="auto,*">
+            <!-- header -->
+            <ng-container row="0" *ngIf="header">
+                <ns-header [title]="header.title" [description]="header.description" [backEnabled]="header.backEnabled">
+                </ns-header>
+            </ng-container>
+
+            <!-- main content -->
+            <StackLayout row="1">
+                <ScrollView height="100%">
+                    <ng-content></ng-content>
+                </ScrollView>
+            </StackLayout>
+        </GridLayout>
+    </StackLayout>
+</StackLayout>

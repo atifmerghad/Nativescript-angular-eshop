@@ -1,0 +1,35 @@
+<ns-page>
+    <StackLayout height="100%" class="bg">
+
+        <GridLayout rows="auto,*,auto" height="70%">
+            <GridLayout row="0" columns="*,auto" padding="24">
+                <StackLayout col="1" (tap)="changeLanguage()">
+                    <Label class="h2 blue" fontSize="14" text="{{ 'shared.language' | L}}"
+                        fontFamily="{{(!isRtl)?'Almarai,Almarai-Bold':'Raleway,Raleway-Bold'}}"></Label>
+                </StackLayout>
+            </GridLayout>
+
+            <StackLayout row="1" horizontalAlignment="center" verticalAlignment="center" marginBottom="36">
+
+                <Label class="m-12 blue" text="{{'shared.welcome' | L}}" fontSize="48" fontWeight="600" textWrap="true"
+                    textAlignment="center" horizontalAlignment="center"></Label>
+                <Label class="m-12 blue" text="{{ 'shared.getGrocery'| L}}" horizontalAlignment="center" fontSize="14"
+                    [nsRouterLink]="['/login']"></Label>
+            </StackLayout>
+
+        </GridLayout>
+        <StackLayout row="1" class="color-section">
+            <FlexboxLayout class="color-section" row="2" flexDirection="column"
+                style="  background:linear-gradient(#3f1c9f, #a85cbf);" verticalAlignment="center">
+                <GridLayout row="2" class="color-section" textAlingment="center" columns="*,auto,auto,*"
+                    [nsRouterLink]="['/items']">
+                    <Label [col]="isRtl?'2':'1'" class="h2" margin="5" text="{{ 'shared.getStarted' | L}}"
+                        color="#FFFFFF" fontWeight="600" textAlignment="center"></Label>
+                    <Label [col]="isRtl?'1':'2'" class="h2" margin="5" [text]="isRtl?'<':'>'" color="#FFFFFF"
+                        fontWeight="600" textAlignment="center"></Label>
+                </GridLayout>
+            </FlexboxLayout>
+
+        </StackLayout>
+    </StackLayout>
+</ns-page>

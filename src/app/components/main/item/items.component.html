@@ -1,0 +1,122 @@
+<ns-page [header]="{ title: 'Home', description: 'Logo', backEnabled: true, scroll: true  }">
+    <StackLayout>
+        <ns-card>
+            <FlexboxLayout [flexDirection]="isRtl ? 'row-reverse' : 'row'" justifyContent="flex-start"
+                backgroundColor="white" borderRadius="10" padding="10" margin="12">
+                <Image src="https://source.unsplash.com/random/300x300" borderRadius="5" stretch="aspectFill" width="70"
+                    height="70">
+                </Image>
+                <StackLayout padding="10">
+                    <Label class="RTL" fontSize="20" [textAlignment]="isRtl ? 'right' : 'left'" fontWeight="bold"
+                        text="{{ 'shared.getStarted' | L}}"></Label>
+                    <Label fontSize="15" [textAlignment]="isRtl ? 'right' : 'left'" text="{{ 'shared.getGrocery' | L}}"
+                        textWrap="true"></Label>
+                </StackLayout>
+            </FlexboxLayout>
+
+        </ns-card>
+
+        <ns-card>
+            <FlexboxLayout [flexDirection]="isRtl ? 'row-reverse' : 'row'" justifyContent="flex-start"
+                backgroundColor="white" borderRadius="10" padding="10" margin="12">
+                <Image src="https://source.unsplash.com/random/300x300" borderRadius="5" stretch="aspectFill" width="70"
+                    height="70">
+                </Image>
+                <StackLayout padding="10">
+                    <Label class="RTL" fontSize="20" [textAlignment]="isRtl ? 'right' : 'left'" fontWeight="bold"
+                        text="{{ 'shared.getStarted' | L}}"></Label>
+                    <Label fontSize="15" [textAlignment]="isRtl ? 'right' : 'left'" text="{{ 'shared.getGrocery' | L}}"
+                        textWrap="true"></Label>
+                </StackLayout>
+            </FlexboxLayout>
+
+        </ns-card>
+
+
+        <ns-card>
+            <FlexboxLayout [flexDirection]="isRtl ? 'row-reverse' : 'row'" justifyContent="flex-start"
+                backgroundColor="white" borderRadius="10" padding="10" margin="12">
+                <Image src="https://source.unsplash.com/random/300x300" borderRadius="5" stretch="aspectFill" width="70"
+                    height="70">
+                </Image>
+                <StackLayout padding="10">
+                    <Label class="RTL" fontSize="20" [textAlignment]="isRtl ? 'right' : 'left'" fontWeight="bold"
+                        text="{{ 'shared.getStarted' | L}}"></Label>
+                    <Label fontSize="15" [textAlignment]="isRtl ? 'right' : 'left'" text="{{ 'shared.getGrocery' | L}}"
+                        textWrap="true"></Label>
+                </StackLayout>
+            </FlexboxLayout>
+
+        </ns-card>
+
+        <ns-card>
+            <FlexboxLayout [flexDirection]="isRtl ? 'row-reverse' : 'row'" justifyContent="flex-start"
+                backgroundColor="white" borderRadius="10" padding="10" margin="12">
+                <Image src="https://source.unsplash.com/random/300x300" borderRadius="5" stretch="aspectFill" width="70"
+                    height="70">
+                </Image>
+                <StackLayout padding="10">
+                    <Label class="RTL" fontSize="20" [textAlignment]="isRtl ? 'right' : 'left'" fontWeight="bold"
+                        text="{{ 'shared.getStarted' | L}}"></Label>
+                    <Label fontSize="15" [textAlignment]="isRtl ? 'right' : 'left'" text="{{ 'shared.getGrocery' | L}}"
+                        textWrap="true"></Label>
+                </StackLayout>
+            </FlexboxLayout>
+
+        </ns-card>
+
+        <ns-card>
+            <FlexboxLayout [flexDirection]="isRtl ? 'row-reverse' : 'row'" justifyContent="flex-start"
+                backgroundColor="white" borderRadius="10" padding="10" margin="12">
+                <Image src="https://source.unsplash.com/random/300x300" borderRadius="5" stretch="aspectFill" width="70"
+                    height="70">
+                </Image>
+                <StackLayout padding="10">
+                    <Label class="RTL" fontSize="20" [textAlignment]="isRtl ? 'right' : 'left'" fontWeight="bold"
+                        text="{{ 'shared.getStarted' | L}}"></Label>
+                    <Label fontSize="15" [textAlignment]="isRtl ? 'right' : 'left'" text="{{ 'shared.getGrocery' | L}}"
+                        textWrap="true"></Label>
+                </StackLayout>
+            </FlexboxLayout>
+
+        </ns-card>
+
+        <ns-card>
+            <FlexboxLayout [flexDirection]="isRtl ? 'row-reverse' : 'row'" justifyContent="flex-start"
+                backgroundColor="white" borderRadius="10" padding="10" margin="12">
+                <Image src="https://source.unsplash.com/random/300x300" borderRadius="5" stretch="aspectFill" width="70"
+                    height="70">
+                </Image>
+                <StackLayout padding="10">
+                    <Label class="RTL" fontSize="20" [textAlignment]="isRtl ? 'right' : 'left'" fontWeight="bold"
+                        text="{{ 'shared.getStarted' | L}}"></Label>
+                    <Label fontSize="15" [textAlignment]="isRtl ? 'right' : 'left'" text="{{ 'shared.getGrocery' | L}}"
+                        textWrap="true"></Label>
+                </StackLayout>
+            </FlexboxLayout>
+
+        </ns-card>
+
+
+        <StackLayout>
+            <Label text="{{ 'shared.hint' | L}}" class="body2 m-12"></Label>
+            <TextField hint="{{ 'shared.hint' | L}}" class="form-control" [textAlignment]="isRtl ? 'right' : 'left'">
+            </TextField>
+
+            <Label text="{{ 'shared.hint' | L}}" class="body2 m-12"></Label>
+            <TextField hint="{{ 'shared.hint' | L}}" class="form-control" [textAlignment]="isRtl ? 'right' : 'left'">
+            </TextField>
+
+            <Button text="{{ 'shared.language' | L}}" (tap)="changeLanguage()" class="btn btn-primary"
+                fontFamily="{{(!isRtl)?'Almarai,Almarai-Bold':'Raleway,Raleway-Bold'}}"></Button>
+        </StackLayout>
+
+        <GridLayout backgroundColor="red">
+
+        </GridLayout>
+
+        <Button text="{{ 'shared.language' | L}}" (tap)="changeLanguage()" class="btn btn-primary"
+            fontFamily="{{(!isRtl)?'Almarai,Almarai-Bold':'Raleway,Raleway-Bold'}}"></Button>
+
+    </StackLayout>
+</ns-page>

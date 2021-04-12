@@ -1,0 +1,14 @@
+<GridLayout columns="auto,*,auto" class="header" padding="24">
+    <ng-container *ngIf="backEnabled">
+        <Label [col]="isRtl?'2':'0'" [text]="isRtl?'>':'<'" fontSize="18" fontWeight="600" (tap)="back()"></Label>
+    </ng-container>
+
+    <ng-container *ngIf="title">
+        <Label col="1" horizontalAlignment="center" class="title" [text]="title" fontSize="18" fontWeight="600"></Label>
+    </ng-container>
+
+    <ng-container *ngIf="description">
+        <Label [col]="isRtl?'0':'2'" class="description" [text]="description"></Label>
+    </ng-container>
+
+</GridLayout>

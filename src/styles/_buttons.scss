@@ -1,0 +1,56 @@
+@import "./variables";
+
+.btn {
+  color: white;
+  text-decoration: none;
+  padding: 5 10;
+  border-radius: 3;
+  font-size: 17;
+  text-align: center;
+}
+
+Button {
+  text-transform: none;
+  border-color: transparent;
+  min-width: 64;
+  height: 52;
+  padding: 0 5 0 5;
+  font-size: 14;
+  margin: 8 16 8 16;
+}
+
+.btn-primary {
+  color: $white;
+  border-radius: 6;
+  font-weight: 600;
+  font-size: 17;
+  border: 1;
+  padding: 6;
+  background-color: $blue;
+  height: 44;
+  &.disabled {
+    background-color: $secondary;
+    pointer-events: none;
+  }
+  &:hover {
+    background-color: $light-blue;
+  }
+}
+
+.btn-default {
+  color: $accent;
+  border-radius: 6;
+  font-weight: 600;
+  font-size: 17;
+  border: 1;
+  padding: 6;
+  background-color: $gray;
+  height: 44;
+  &.disabled {
+    background-color: $secondary;
+    pointer-events: none;
+  }
+  &:hover {
+    background-color: $light-blue;
+  }
+}

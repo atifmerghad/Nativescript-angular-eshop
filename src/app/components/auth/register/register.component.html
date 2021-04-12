@@ -1,0 +1,42 @@
+<ns-page [header]="{ title: 'Sign In', backEnabled: true, scroll: true  }">
+
+    <StackLayout height="100%">
+        <GridLayout rows="auto,*,auto">
+            <StackLayout row="0" marginTop="24">
+                <Label text="{{ 'shared.hint' | L}}" class="body2 m-12"></Label>
+                <TextField hint="{{ 'shared.hint' | L}}" class="form-control" [(ngModel)]="loginForm.username"
+                    keyboardType="email" [textAlignment]="isRtl ? 'right' : 'left'">
+                </TextField>
+
+                <Label text="{{ 'shared.hint' | L}}" class="body2 m-12"></Label>
+                <TextField hint="{{ 'shared.hint' | L}}" class="form-control" [(ngModel)]="loginForm.username"
+                    keyboardType="email" [textAlignment]="isRtl ? 'right' : 'left'">
+                </TextField>
+
+                <Label text="{{ 'shared.hint' | L}}" class="body2 m-12"></Label>
+                <TextField hint="{{ 'shared.hint' | L}}" class="form-control" [(ngModel)]="loginForm.username"
+                    keyboardType="email" [textAlignment]="isRtl ? 'right' : 'left'">
+                </TextField>
+
+
+                <Label text="{{ 'shared.hint' | L}}" class="body2 m-12"></Label>
+                <TextField hint="⬤ ⬤ ⬤ ⬤ ⬤ ⬤" class="form-control" keyboardType="email" [secure]="true"
+                    [textAlignment]="isRtl ? 'right' : 'left'">
+                </TextField>
+
+                <Button text="{{ 'Register' | L}}" (tap)="loginUser()" class="btn btn-primary"
+                    fontFamily="{{(!isRtl)?'Almarai,Almarai-Bold':'Raleway,Raleway-Bold'}}"></Button>
+
+            </StackLayout>
+            <StackLayout row="2">
+                <Label class="body2 m-12" textAlignment="center" [nsRouterLink]="['/register']">
+                    <FormattedString>
+                        <Span text="{{ 'If you do not have account, ' | L}}"></Span>
+                        <Span text="{{ 'Sign Up' | L}}" [nsRouterLink]="['/register']" color="#364fd4"></Span>
+                    </FormattedString>
+                </Label>
+            </StackLayout>
+
+        </GridLayout>
+    </StackLayout>
+</ns-page>

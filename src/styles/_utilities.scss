@@ -1,0 +1,17 @@
+.form-control {
+  background-color: transparent;
+  color: #000;
+  placeholder-color: #b3b3b3;
+  border-color: #c7c7c7;
+  border-width: 1;
+  border-radius: 6;
+  background-color: transparent;
+  font-size: 14;
+  padding: 10;
+  margin: 5 16;
+  height: 48;
+}
+
+.form-control:focus {
+  border-color: #0088c9; // #30bcff; //#004363;
+}
