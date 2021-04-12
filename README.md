@@ -91,10 +91,11 @@ The project itself is mainly located in the `src/` folder. It follows this gener
 
 #### Screenshots
 
-<img width="200px" src='./src/assets/screens/splash.png' style="margin-right: 10px;"></img>
+<!--<img width="200px" src='./src/assets/screens/splash.png' style="margin-right: 10px;"></img>
 <img width="200px" src='src/assets/screens/screen2.png' style="margin-right: 10px;"></img>
 <img width="200px" src='src/assets/screens/screen3.png' style="margin-right: 10px;"></img>
 <img width="200px" src='src/assets/screens/screen2-ar.png'></img>
+-->
 
 ### Plugins
 
