@@ -1,12 +1,12 @@
 /* Add mobile styles for the component here.  */
-
+@import "~/app";
 .home-panel {
   * {
     //font-family: Raleway-Regular, Raleway, Almarai, Almarai-Regular;
   }
 
   padding: 20;
-  background: #0fa956; //linear-gradient(#3f1c9f, #a85cbf);
+  background: $blue; //linear-gradient(#3f1c9f, #a85cbf);
 
   .title {
     font-size: 24;

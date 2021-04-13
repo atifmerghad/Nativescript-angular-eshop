@@ -1,18 +1,31 @@
-<StackLayout height="100%" [ngClass]="isRtl?'RTL':'LTR'">
-    <StackLayout class="page">
-        <GridLayout rows="auto,*">
-            <!-- header -->
-            <ng-container row="0" *ngIf="header">
-                <ns-header [title]="header.title" [description]="header.description" [backEnabled]="header.backEnabled">
-                </ns-header>
-            </ng-container>
+<AbsoluteLayout [ngClass]="isRtl?'rtl':'ltl'">
+    <StackLayout width="100%" height="100%" [ngClass]="isRtl?'RTL':'LTR'" [opacity]="(loader)?'0.3':'1'">
+        <StackLayout class="page">
+            <GridLayout rows="auto,*">
+                <!-- header -->
+                <ng-container row="0" *ngIf="header">
+                    <ns-header [title]="header.title" [description]="header.description"
+                        [backEnabled]="header.backEnabled">
+                    </ns-header>
+                </ng-container>
 
-            <!-- main content -->
-            <StackLayout row="1">
-                <ScrollView height="100%">
-                    <ng-content></ng-content>
-                </ScrollView>
-            </StackLayout>
-        </GridLayout>
+                <!-- main content -->
+                <StackLayout row="1">
+                    <ScrollView height="100%">
+                        <ng-content></ng-content>
+                    </ScrollView>
+                </StackLayout>
+            </GridLayout>
+        </StackLayout>
     </StackLayout>
-</StackLayout>
+
+    <GridLayout id="loader" width="100%" height="100%" class="loader" [visibility]="loader?'visible':'collapse'"
+        rows="*,auto,*">
+        <StackLayout row="1">
+            <Gif shadow="70" shadowOffset="0" shadowColor="gray" elevation="50" src="~/assets/gifs/loader.gif"
+                width="64" height="64" borderRadius="50">
+            </Gif>
+        </StackLayout>
+    </GridLayout>
+
+</AbsoluteLayout>

@@ -10,6 +10,7 @@ import { device, screen, isAndroid, isIOS } from "tns-core-modules/platform";
 })
 export class PageComponent implements OnInit, AfterViewInit {
     isRtl;
+    @Input() loader?: boolean = false;
     @Input() header?: {
         title?: string;
         description?: string;

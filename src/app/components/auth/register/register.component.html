@@ -1,42 +1,58 @@
-<ns-page [header]="{ title: 'Sign In', backEnabled: true, scroll: true  }">
+<ns-page [header]="{ title: 'auth.register', backEnabled: true, scroll: true  }">
 
-    <StackLayout height="100%">
-        <GridLayout rows="auto,*,auto">
-            <StackLayout row="0" marginTop="24">
-                <Label text="{{ 'shared.hint' | L}}" class="body2 m-12"></Label>
-                <TextField hint="{{ 'shared.hint' | L}}" class="form-control" [(ngModel)]="loginForm.username"
-                    keyboardType="email" [textAlignment]="isRtl ? 'right' : 'left'">
-                </TextField>
+    <StackLayout marginTop="24">
+        <Label text="{{ 'auth.register_firstName' | L}}" class="body2 m-12"></Label>
+        <TextField hint="{{ 'auth.register_hint_firstName' | L}}" class="form-control" [(ngModel)]="loginForm.username"
+            keyboardType="email" [textAlignment]="isRtl ? 'right' : 'left'">
+        </TextField>
 
-                <Label text="{{ 'shared.hint' | L}}" class="body2 m-12"></Label>
-                <TextField hint="{{ 'shared.hint' | L}}" class="form-control" [(ngModel)]="loginForm.username"
-                    keyboardType="email" [textAlignment]="isRtl ? 'right' : 'left'">
-                </TextField>
+        <Label text="{{ 'auth.register_lastName' | L}}" class="body2 m-12"></Label>
+        <TextField hint="{{ 'auth.register_hint_lastName' | L}}" class="form-control" [(ngModel)]="loginForm.username"
+            keyboardType="email" [textAlignment]="isRtl ? 'right' : 'left'">
+        </TextField>
 
-                <Label text="{{ 'shared.hint' | L}}" class="body2 m-12"></Label>
-                <TextField hint="{{ 'shared.hint' | L}}" class="form-control" [(ngModel)]="loginForm.username"
-                    keyboardType="email" [textAlignment]="isRtl ? 'right' : 'left'">
-                </TextField>
+        <Label text="{{ 'auth.register_date' | L}}" class="body2 m-12"></Label>
+
+        <DatePickerField minDate="1940/02/02" dateFormat="dd-MM-yyyy" hint="{{ 'DD/MM/YYYY' | L}}" class="form-control">
+        </DatePickerField>
 
 
-                <Label text="{{ 'shared.hint' | L}}" class="body2 m-12"></Label>
-                <TextField hint="⬤ ⬤ ⬤ ⬤ ⬤ ⬤" class="form-control" keyboardType="email" [secure]="true"
-                    [textAlignment]="isRtl ? 'right' : 'left'">
-                </TextField>
 
-                <Button text="{{ 'Register' | L}}" (tap)="loginUser()" class="btn btn-primary"
-                    fontFamily="{{(!isRtl)?'Almarai,Almarai-Bold':'Raleway,Raleway-Bold'}}"></Button>
+        <Label text="{{ 'auth.register_email' | L}}" class="body2 m-12"></Label>
+        <TextField hint="{{ 'auth.register_hint_email' | L}}" class="form-control" [(ngModel)]="loginForm.username"
+            keyboardType="email" [textAlignment]="isRtl ? 'right' : 'left'">
+        </TextField>
 
-            </StackLayout>
-            <StackLayout row="2">
-                <Label class="body2 m-12" textAlignment="center" [nsRouterLink]="['/register']">
-                    <FormattedString>
-                        <Span text="{{ 'If you do not have account, ' | L}}"></Span>
-                        <Span text="{{ 'Sign Up' | L}}" [nsRouterLink]="['/register']" color="#364fd4"></Span>
-                    </FormattedString>
-                </Label>
-            </StackLayout>
 
-        </GridLayout>
+        <Label text="{{ 'auth.register_username' | L}}" class="body2 m-12"></Label>
+        <TextField hint="{{ 'auth.register_hint_username' | L}}" class="form-control" [(ngModel)]="loginForm.username"
+            keyboardType="email" [textAlignment]="isRtl ? 'right' : 'left'">
+        </TextField>
+
+
+        <Label text="{{ 'auth.register_password' | L}}" class=" m-12"></Label>
+        <TextField hint="⬤ ⬤ ⬤ ⬤ ⬤ ⬤" class="form-control" keyboardType="email" [secure]="true"
+            [textAlignment]="isRtl ? 'right' : 'left'">
+        </TextField>
+
+        <Label text="{{ 'auth.register_picture' | L}}" class=" m-12"></Label>
+
+        <StackLayout height="80">
+            <GridLayout row="0" rows="auto,auto" [columns]="isRtl?'auto,*':'*,auto'" borderColor="#2c2b2b"
+                borderWidth="1" borderRadius="6" padding="10" margin="0 16 0 16">
+                <Label row="0" [col]="isRtl?'1':'0'" text="{{ 'auth.register_hint_picture' | L}}"> </Label>
+                <Label row="1" [col]="isRtl?'1':'0'" text="{{ 'auth.register_hint_picture' | L}}"> </Label>
+                <StackLayout [col]="isRtl?'0':'1'" verticalAlignment="center" rowSpan="2">
+                    <ActivityIndicator id="indicator" width="24" height="24" [busy]="true" class="activity-indicator">
+                    </ActivityIndicator>
+                </StackLayout>
+            </GridLayout>
+        </StackLayout>
+        <Label height="40" text="{{ 'auth.register_terms' | L}}" class=" m-12"></Label>
+        <Button text="{{ 'auth.register' | L}}" (tap)="loginUser()" class="btn btn-primary"></Button>
+
+
     </StackLayout>
+
+
 </ns-page>

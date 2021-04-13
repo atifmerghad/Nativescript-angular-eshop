@@ -32,7 +32,7 @@ export class RegisterComponent implements OnInit {
         if (this.loginForm.username == 'Atif')
             this.routerExtensions.navigate(['/otp']);
         else
-            this.utils.errorsNotification('login_wrong');
+            this.utils.errorsNotification('auth.login_wrong');
     }
 
 

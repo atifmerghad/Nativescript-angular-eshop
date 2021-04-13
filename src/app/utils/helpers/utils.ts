@@ -45,9 +45,11 @@ export class Utils {
     // NOTIFICATIONS 
     errorsNotification(message) {
         this.feedback.show({
+            // title: ''
             message: localize(message),
             backgroundColor: new Color("#E02020"),
-            //  titleFont: "Raleway"
+            titleFont: Utils.isRtl ? "Almarai" : "Raleway",
+            messageFont: Utils.isRtl ? "Almarai" : "Raleway"
         });
     }
 

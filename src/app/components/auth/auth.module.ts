@@ -14,7 +14,7 @@ import { ChangePasswordComponent } from "./change-password/change-password.compo
 import { ForgotPasswordComponent } from "./forgot-password/forgot-password.component";
 import { ForgotUsernameComponent } from "./forgot-username/forgot-username.component";
 
-LoginComponent
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
     declarations: [
@@ -33,7 +33,11 @@ LoginComponent
         NativeScriptRouterModule,
         NativeScriptFormsModule,
         NativeScriptLocalizeModule,
-        SharedModule
+        SharedModule,
+        ReactiveFormsModule,
+    ],
+    providers: [
+        ModalDialogService
     ],
     schemas: [
         NO_ERRORS_SCHEMA

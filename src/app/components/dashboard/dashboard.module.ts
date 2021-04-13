@@ -18,6 +18,9 @@ import { NativeScriptFormsModule, NativeScriptRouterModule, NativeScriptCommonMo
         NativeScriptRouterModule,
         NativeScriptFormsModule,
     ],
+    providers: [
+        ModalDialogService
+    ],
     schemas: [
         NO_ERRORS_SCHEMA
     ]

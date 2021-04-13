@@ -1,10 +1,12 @@
 <GridLayout columns="auto,*,auto" class="header" padding="24">
     <ng-container *ngIf="backEnabled">
-        <Label [col]="isRtl?'2':'0'" [text]="isRtl?'>':'<'" fontSize="18" fontWeight="600" (tap)="back()"></Label>
+        <Image [col]="isRtl?'2':'0'" src="~/assets/images/arrow-{{isRtl?'right':'left'}}.png" (tap)="back()" width="24"
+            height="24"></Image>
     </ng-container>
 
     <ng-container *ngIf="title">
-        <Label col="1" horizontalAlignment="center" class="title" [text]="title" fontSize="18" fontWeight="600"></Label>
+        <Label col="1" horizontalAlignment="center" class="title" text="{{ title | L}}" fontSize="19"
+            fontWeight="600"></Label>
     </ng-container>
 
     <ng-container *ngIf="description">

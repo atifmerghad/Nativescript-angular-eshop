@@ -1,44 +1,68 @@
-<ns-page [header]="{ title: 'Sign In', backEnabled: true, scroll: true  }">
+<ns-page [header]="{ title: 'auth.login', backEnabled: true, scroll: true  }" [loader]="loader">
 
     <StackLayout height="100%">
         <GridLayout rows="auto,*,auto">
-            <StackLayout row="0" marginTop="24">
-                <Label text="{{ 'shared.hint' | L}}" class="h2 m-12"></Label>
-                <TextField class="form-control" hint="{{ 'shared.hint' | L}}" [(ngModel)]="loginForm.username"
-                    keyboardType="email">
-                </TextField>
-
-                <Label text="{{ 'shared.hint' | L}}" class="h2 m-12"></Label>
-
-                <GridLayout [columns]="isRtl?'auto,*':'*,auto'" class="form-control">
-                    <TextField [col]="isRtl?'1':'0'" hint="⬤ ⬤ ⬤ ⬤ ⬤ ⬤" keyboardType="email" [secure]="!showPassword"
-                        [textAlignment]="isRtl ? 'right' : 'left'">
-                    </TextField>
-                    <Label [col]="isRtl?'0':'1'" text="👁" (tap)="showHidePassword()"></Label>
-                </GridLayout>
-
-                <Button text="{{ 'Sign In' | L}}" (tap)="loginUser()" class="btn btn-primary"
-                    fontFamily="{{(!isRtl)?'Almarai,Almarai-Bold':'Raleway,Raleway-Bold'}}"></Button>
-
-                <Label text="{{ 'Sign in by social' | L}}" class="body2 m-12" textAlignment="center"></Label>
-
+            <StackLayout row="0" marginTop="24" [formGroup]="loginForm">
+                <Label text="{{ 'auth.login_username' | L}}" class="h2 m-12"></Label>
                 <StackLayout>
+                    <TextField class="form-control" hint="{{ 'auth.login_hint_username' | L}}"
+                        (textChange)="onUsernameChecked($event)" formControlName="username" keyboardType="email"
+                        [ngClass]="{ 'is-invalid': submitted && loginForm.controls['username'].hasError('required')  }">
+                    </TextField>
 
-                    <GridLayout columns="*,auto,*">
-                        <Button col="0" text="{{ 'Facebook' | L}}" (tap)="loginUser()" class="btn btn-default"
-                            fontFamily="{{(!isRtl)?'Almarai,Almarai-Bold':'Raleway,Raleway-Bold'}}"></Button>
-                        <Button col="2" text="{{ 'Google' | L}}" (tap)="loginUser()" class="btn btn-default"
-                            fontFamily="{{(!isRtl)?'Almarai,Almarai-Bold':'Raleway,Raleway-Bold'}}"></Button>
-                    </GridLayout>
+                    <Label *ngIf="submitted && loginForm.controls['username'].hasError('required')"
+                        class="invalid-feedback" margin="0 16 0 16" [textAlignment]="isRtl?'left':'right'">
+                        <Span *ngIf="loginForm.controls['username'].hasError('required')"
+                            text="{{ 'auth.login_usernameRequired' | L}}"></Span>
+                    </Label>
 
                 </StackLayout>
+
+                <Label text="{{ 'auth.login_password' | L}}" class="h2 m-12"></Label>
+
+                <StackLayout>
+                    <GridLayout class="form-control" [columns]="isRtl?'auto,*':'*,auto'"
+                        [ngClass]="{ 'is-invalid': submitted && loginForm.controls['password'].hasError('required')  }">
+                        <TextField [col]="isRtl?'1':'0'" hint="⬤ ⬤ ⬤ ⬤ ⬤ ⬤" keyboardType="email"
+                            [secure]="!showPassword" [textAlignment]="isRtl ? 'right' : 'left'"
+                            (textChange)="onPasswordChecked($event)" formControlName="password">
+                        </TextField>
+                        <Image [col]="isRtl?'0':'1'" (tap)="showHidePassword()"
+                            src="~/assets/images/{{(showPassword)?'view':'private'}}.png"></Image>
+                    </GridLayout>
+
+                    <Label *ngIf="submitted && loginForm.controls['password'].hasError('required')"
+                        class="invalid-feedback" margin="0 16 0 16" [textAlignment]="isRtl?'left':'right'">
+                        <Span *ngIf="loginForm.controls['password'].hasError('required')"
+                            text="{{ 'auth.login_passwordRequired' | L}}"></Span>
+                    </Label>
+
+                </StackLayout>
+                <Label row="1" text="{{ 'auth.login_forgotPassword'  | L}}" class="m-12" textAlignment="right"></Label>
+                <Button text="{{ 'auth.login' | L}}" (tap)="onSubmit()" class="btn btn-primary"></Button>
+
+                <Label text="{{ 'auth.login_social' | L}}" class="body2 m-12" textAlignment="center"></Label>
+
+                <GridLayout columns="*,10,*" margin="16">
+                    <GridLayout [col]="isRtl?'2':'0'" [columns]="isRtl?'*,auto':'auto,*'" class="btn btn-default">
+                        <Image [col]="isRtl?'1':'0'" src="~/assets/images/facebook.png"></Image>
+                        <Button [col]="isRtl?'0':'1'" text="{{ 'auth.login_facebook' | L}}">
+                        </Button>
+                    </GridLayout>
+                    <GridLayout [col]="isRtl?'0':'2'" [columns]="isRtl?'*,auto':'auto,*'" class="btn btn-default">
+                        <Image [col]="isRtl?'1':'0'" src="~/assets/images/google.png"></Image>
+                        <Button [col]="isRtl?'0':'1'" text="{{ 'auth.login_google' | L}}">
+                        </Button>
+                    </GridLayout>
+
+                </GridLayout>
 
             </StackLayout>
             <StackLayout row="2">
                 <Label class="body2 m-12" textAlignment="center" [nsRouterLink]="['/register']">
                     <FormattedString>
-                        <Span text="{{ 'If you do not have account, ' | L}}"></Span>
-                        <Span text="{{ 'Sign Up' | L}}" [nsRouterLink]="['/register']" color="#364fd4"></Span>
+                        <Span text="{{ 'auth.login_signUp' | L}}"></Span>
+                        <Span text="{{ 'auth.login_sign' | L}}" [nsRouterLink]="['/register']" color="#364fd4"></Span>
                     </FormattedString>
                 </Label>
             </StackLayout>
