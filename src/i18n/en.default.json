@@ -31,7 +31,7 @@
         "login_forgotPassword": "Forgot password?",
         "login_signUp": "If you do not have an account, ",
         "login_sign": "Sign Up",
-        "login_social": "Sign in by social",
+        "login_social": "Or sign in with",
         "login_google": "Google",
         "login_facebook": "Facebook",
         "login_wrong": "You have entered an invalid username or password",

@@ -31,22 +31,18 @@
                 </GridLayout>
             </WrapLayout>
 
-            <Label style="width: 236;font-size: 14;text-align: center;color: #ffffff;margin-top:20;"
-                text="{{'auth.otp_resend' | L}} " textWrap="true"></Label>
+
             <Label style="width: 236;font-size: 14;text-align: center;color: #ffffff;margin-top:10"
                 text="{{'auth.otp_mobile' | L}}" textWrap="true"></Label>
+            <Label style="width: 236;font-size: 14;text-align: center;color: #ffffff;margin-top:20;"
+                text="{{'auth.otp_email' | L}} " textWrap="true"></Label>
             <Label style="width: 236;font-size: 14;text-align: center;color: #ffffff;margin-top:5"
                 text="atifmerghad@gmail.com" textWrap="true"></Label>
 
             <GridLayout rows="auto" [columns]="isRtl?'auto,*':'*,auto'">
-                <!--
-<Label row="0" [col]="isRtl?'1':'0'" *ngIf="counter.minutes+counter.seconds>0"
+
+                <Label row="0" [col]="isRtl?'1':'0'" *ngIf="counter.minutes+counter.seconds>0"
                     text="{{ 'auth.otp_valid'| L }} {{counter.minutes}} {{ 'auth.otp_min'| L }} {{counter.seconds}} {{ 'auth.otp_sec'| L }} "
-                    class="otp-dec" style=" font-weight: 400; " marginTop="10" textWrap="true"></Label>
-           
-                         -->
-                <Label row="0" [col]="isRtl?'1':'0'"
-                    text="{{ 'auth.otp_valid'| L }} 2 {{ 'auth.otp_min'| L }} 10 {{ 'auth.otp_sec'| L }} "
                     class="otp-dec" style=" font-weight: 400; " marginTop="10" textWrap="true"></Label>
 
                 <Button androidElevation="0" row="0" [col]="isRtl?'0':'1'" *ngIf="showSendOtpSender" [disabled]="true"
