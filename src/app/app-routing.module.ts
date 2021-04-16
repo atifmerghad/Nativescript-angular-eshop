@@ -9,15 +9,17 @@ import { WelcomeComponent } from "./components/main/welcome/welcome.component";
 import { DashboardComponent } from "./components/main/dashboard/dashboard.component";
 
 import { AuthRoutes } from './components/auth/auth-routings';
+import { SharedRoutes } from './components/shared/shared-routings';
 
 const routes: Routes = [
-    { path: "", redirectTo: "/home", pathMatch: "full" },
+    { path: "", redirectTo: "/success", pathMatch: "full" },
     { path: "home", component: HomeComponent },
     { path: "welcome", component: WelcomeComponent },
     { path: "dashboard", component: DashboardComponent },
     { path: "items", component: ItemsComponent },
     { path: "item/:id", component: ItemDetailComponent },
     ...AuthRoutes,
+    ...SharedRoutes
 ];
 
 @NgModule({

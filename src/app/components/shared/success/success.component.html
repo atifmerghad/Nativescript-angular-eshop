@@ -1,0 +1,20 @@
+<ns-page>
+
+    <StackLayout height="100%">
+        <GridLayout rows="auto,*,auto">
+
+
+            <StackLayout row="1" verticalAlignment="center">
+
+                <Image width="120" height="120" src="~/assets/images/success.png"></Image>
+                <Label text="{{ 'Done' | L}}" class="body2 m-12" textAlignment="center" fontWeight="600"
+                    fontSize="19"></Label>
+                <Label text="{{ 'You have successfuly completed your registration' | L}}" margin="0 24 0 24"
+                    textWrap="true" class="body2 m-12" textAlignment="center"></Label>
+
+            </StackLayout>
+            <Button row="2" text="{{ 'Go to Dashboard' | L}}" class="btn  btn-primary" (tap)="go()"></Button>
+
+        </GridLayout>
+    </StackLayout>
+</ns-page>
