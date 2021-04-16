@@ -32,6 +32,7 @@ import { ProductComponent } from "./components/main/product/product.component";
 
 import { RouteReuseStrategy } from "@angular/router";
 import { CustomRouteReuseStrategy } from "./custom-router-strategy";
+import { AuthService } from "./utils/services/auth.service";
 
 
 @NgModule({
@@ -70,6 +71,7 @@ import { CustomRouteReuseStrategy } from "./custom-router-strategy";
         },
         AppComponent,
         AuthGuard,
+        AuthService,
         Utils
     ],
     schemas: [

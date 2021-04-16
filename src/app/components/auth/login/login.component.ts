@@ -4,6 +4,7 @@ import { RouterExtensions } from "@nativescript/angular";
 import { Utils } from "../../../utils/helpers/utils";
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { TextField } from "@nativescript/core";
+import { getString, setString } from '@nativescript/core/application-settings';
 
 
 @Component({
@@ -67,8 +68,10 @@ export class LoginComponent implements OnInit {
         }
 
         setTimeout(() => {
-            if (this.loginForm.get('username').value == 'Atif')
-                this.routerExtensions.navigate(['/otp']);
+            if (this.loginForm.get('username').value == 'Atif') {
+                setString('token', "Atif");
+                this.routerExtensions.navigate(['/otp', { mobile: '666840674', redirectTo: '/dashboard' }], { clearHistory: true });
+            }
             else {
                 this.submitted = false;
                 this.loader = false;

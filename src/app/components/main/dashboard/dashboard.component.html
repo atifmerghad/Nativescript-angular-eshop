@@ -43,7 +43,14 @@
 
     <TabContentItem>
         <GridLayout>
-            <Label class="btn btn-red" text="Log out" [nsRouterLink]="['/home']"></Label>
+            <StackLayout margin="16">
+                <Label class=" m-12" text="First Name : Atif "></Label>
+                <Label class=" m-12" text="Last Name : Merghad"></Label>
+                <Label class=" m-12" text="Gender : Man"></Label>
+                <Label class=" m-12" text="Mobile : +212 666 840674"></Label>
+                <Label class=" m-12" text="Address : Ouezzane"></Label>
+                <Label class="btn btn-primary" text="Log out" (tap)="logOut()"></Label>
+            </StackLayout>
         </GridLayout>
     </TabContentItem>
 

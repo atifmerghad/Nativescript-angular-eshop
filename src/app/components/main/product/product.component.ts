@@ -78,5 +78,11 @@ export class ProductComponent implements OnInit {
     ngOnInit(): void {
     }
 
+    totalItems = 0
+
+    addToCard() {
+        this.totalItems++;
+    }
+
 
 }

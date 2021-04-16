@@ -1,7 +1,6 @@
 
 import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
 import { NativeScriptLocalizeModule } from "nativescript-localize/angular";
-import { Utils } from "src/app/utils/helpers/utils";
 import { LoginComponent } from './login/login.component';
 import { LoginOptionsComponent } from './login-options/login-options.component';
 import { OtpComponent } from './otp/otp.component';

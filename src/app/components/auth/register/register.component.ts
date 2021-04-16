@@ -28,11 +28,11 @@ export class RegisterComponent implements OnInit {
     ngOnInit(): void {
     }
 
-    loginUser() {
-        if (this.loginForm.username == 'Atif')
-            this.routerExtensions.navigate(['/otp']);
-        else
-            this.utils.errorsNotification('auth.login_wrong');
+    onSubmit() {
+
+        this.routerExtensions.navigate(['/otp', { mobile: '666840674', redirectTo: '/success' }], { clearHistory: true });
+
+        // this.utils.errorsNotification('auth.login_wrong');
     }
 
 

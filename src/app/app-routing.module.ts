@@ -10,12 +10,17 @@ import { DashboardComponent } from "./components/main/dashboard/dashboard.compon
 
 import { AuthRoutes } from './components/auth/auth-routings';
 import { SharedRoutes } from './components/shared/shared-routings';
+import { AuthGuard } from "./utils/helpers/auth.guard";
 
 const routes: Routes = [
-    { path: "", redirectTo: "/success", pathMatch: "full" },
+    { path: "", redirectTo: "/dashboard", pathMatch: "full" },
     { path: "home", component: HomeComponent },
     { path: "welcome", component: WelcomeComponent },
-    { path: "dashboard", component: DashboardComponent },
+    {
+        path: "dashboard",
+        canActivate: [AuthGuard],
+        component: DashboardComponent
+    },
     { path: "items", component: ItemsComponent },
     { path: "item/:id", component: ItemDetailComponent },
     ...AuthRoutes,

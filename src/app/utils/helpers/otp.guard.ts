@@ -3,21 +3,20 @@ import { CanActivate, Router, ActivatedRouteSnapshot, RouterStateSnapshot } from
 import { AuthService } from '../services/auth.service';
 import { getString, setString } from '@nativescript/core/application-settings';
 
-
 @Injectable()
-export class AuthGuard implements CanActivate {
-  constructor(private authService: AuthService,
-    private router: Router) { }
+export class OtpGuard implements CanActivate {
+  constructor(
+    private _authService: AuthService,
+    private _router: Router
+  ) { }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-    console.log("APPLY AUTHGUARD PAGE !")
     let url: string = state.url;
-    if (this.authService.loggedIn()) {
-
+    if (true) {
       return true
     } else {
       setString("redirectUrl", url);
-      this.router.navigate(['/login'])
+      this._router.navigate(['/login-options'])
       return false
     }
   }

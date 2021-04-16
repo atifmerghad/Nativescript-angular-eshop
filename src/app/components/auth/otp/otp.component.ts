@@ -5,6 +5,7 @@ import { TextField } from "tns-core-modules";
 import { device, screen, isAndroid, isIOS } from "tns-core-modules/platform";
 import { Utils } from '../../../utils/helpers/utils';
 import { getString, setString } from '@nativescript/core/application-settings';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
     selector: "app-otp",
@@ -20,10 +21,12 @@ export class OtpComponent implements OnInit {
     isRtl;
     showSendOtpSender
     counter = { minutes: 0, seconds: 0 };
-
+    redirectTo;
+    mobile;
     constructor(
         private utils: Utils,
         private routerExtensions: RouterExtensions,
+        private activatedRoute: ActivatedRoute,
         private page: Page
     ) {
         this.page.actionBarHidden = true;
@@ -33,6 +36,12 @@ export class OtpComponent implements OnInit {
     ngOnInit(): void {
         setTimeout(() => this.myInput.nativeElement.focus(), isAndroid ? 0 : 800);
         this.timerDown(120);
+        this.sendOTP();
+        this.activatedRoute.params.subscribe((routeData: any) => {
+            this.redirectTo = routeData.redirectTo;
+            this.mobile = "+212" + routeData.mobile.substr(0, 2) + "*****" + routeData.mobile.substr(-2);
+        })
+
     }
 
 
@@ -64,14 +73,16 @@ export class OtpComponent implements OnInit {
     }
 
     resendOTP() {
+        this.showSendOtpSender = false;
+        this.timerDown(120);
 
     }
 
     verifyOTP(otp) {
+        //  const redirectUrl = getString('redirectUrl');
         setTimeout(() => {
-            if (otp == '1111') {
-                const redirectUrl = getString('redirectUrl');
-                this.routerExtensions.navigate([redirectUrl]);
+            if (otp == 1111) {
+                this.routerExtensions.navigate([this.redirectTo, { payload: JSON.stringify({ redirectTo: '/dashboard' }) }], { clearHistory: true });
             }
             else {
                 this.utils.errorsNotification('auth.otp_wrong')
@@ -79,10 +90,6 @@ export class OtpComponent implements OnInit {
         }, 2000)
 
     }
-
-
-
-
 
     timerDown(timeVal) {
         var _timeVal = timeVal;

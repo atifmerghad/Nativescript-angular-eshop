@@ -1,13 +1,17 @@
 <GridLayout rows="auto,auto,*">
     <GridLayout row="0" columns="auto,*,auto" margin="24">
         <Image col="0" src="~/assets/images/menu.png" width="18" heigh="10"></Image>
-        <Image col="2" src="~/assets/images/shopping-cart.png" width="32" heigh="32"></Image>
+        <AbsoluteLayout col="2">
+            <Label col="1" text="{{totalItems}}" fontWeight="600" fontSize="10" height="12" left="18" top="-2"
+                padding="3" style="color:#fff; background-color: tomato; border-radius: 50;"></Label>
+            <Image src="~/assets/images/shopping-cart.png" width="32" height="32"></Image>
+        </AbsoluteLayout>
     </GridLayout>
     <GridLayout row="1">
         <StackLayout margin="12 24">
             <Label color="#000000" fontWeight="600" fontSize="24" text="Products" marginBottom="12"></Label>
             <GridLayout columns="*,auto" style="background: #F2F3F2; border-radius:15; border-color: #F2F3F2"
-                height="50" width="100%">
+                padding="5" height="50" width="100%">
                 <TextField col="0" hint="Search" borderColor="#F2F3F2" borderWidth="0"></TextField>
                 <Image col="1" src="~/assets/images/loop.png" width="24" height="24" margin="7"></Image>
             </GridLayout>
@@ -36,7 +40,7 @@
                 <StackLayout margin="12 24">
                     <Label color="#000000" fontWeight="600" fontSize="24" text="All products" marginBottom="12"></Label>
 
-                    <StackLayout *ngFor="let product of products" margin="12 0 12 0" height="80">
+                    <StackLayout *ngFor="let product of products" margin="12 0 12 0" height="80" (tap)="addToCard()">
                         <GridLayout columns="auto,*" height="80" borderRadius="6" padding="10"
                             [borderColor]="product.borderColor" [backgroundColor]="product.backgroundColor">
                             <StackLayout col="0">

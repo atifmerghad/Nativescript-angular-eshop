@@ -1,9 +1,38 @@
-<GridLayout rows="*,auto,*" class="color-section" backgroundColor="#364fd4">
+<GridLayout rows="*,auto" class="carousel-layout-fix">
+    <Carousel row="0" debug="true" height="100%" width="100%" color="white" pageChanged="myChangeEvent"
+        pageTapped="mySelectedEvent" indicatorOffset="0, -30" indicatorColor="#0000FF" finite="true" bounce="false"
+        showIndicator="true" verticalAlignment="top" android:indicatorAnimation="WORM">
+        <CarouselItem backgroundColor="#f45c43" id="slide1" verticalAlignment="middle">
+            <label text="Each slide is defined in the XML." textWrap="true" margin="30"></label>
+            <label text="Slide 1" backgroundColor="#50000000" horizontalAlignment="center"></label>
 
-    <StackLayout row="1" horizontalAlignment="center" verticalAlignment="center" textAlingment="center">
+            <label text="Wrap the Carousel in a GridLayout in order to place the indicator on top (android)"
+                textWrap="true" margin="30" ios:visibility="collapsed"></label>
+        </CarouselItem>
 
-        <Label text="E-shop" color="#FFFFFF" fontSize="36" textAlingment="center"></Label>
-        <Label text="Buy you needs by click" color="#FFFFFF" fontSize="16" textAlingment="center"></Label>
+        <CarouselItem backgroundColor="#1d976c" id="slide2" verticalAlignment="middle">
+            <label text="'finite' is set to False. Carousel will not stop at the last slide" textWrap="true" margin="30"
+                android:visibility="collapsed"></label>
+            <label text="Indicator animation type: 'WORM'" textWrap="true" ios:visibility="collapsed"
+                margin="30"></label>
+            <label text="Slide 2" backgroundColor="#50000000" horizontalAlignment="center"></label>
+        </CarouselItem>
 
-    </StackLayout>
+        <CarouselItem id="slide3" verticalAlignment="middle">
+            <label text="Carousel can be used in fullscreen, just set height to 100%" textWrap="true"
+                margin="30"></label>
+            <label text="Slide 3" backgroundColor="#50000000" horizontalAlignment="center"></label>
+        </CarouselItem>
+
+        <CarouselItem id="slide4" verticalAlignment="middle">
+            <label text="Enjoy using the Carousel plugin :)" textWrap="true" margin="30"></label>
+            <label text="Slide 4" backgroundColor="#50000000" horizontalAlignment="center"></label>
+        </CarouselItem>
+    </Carousel>
+
+
+
+    <Button row="1" text="Next" class="btn btn-primary" (tap)="nextPage()"></Button>
+
+
 </GridLayout>

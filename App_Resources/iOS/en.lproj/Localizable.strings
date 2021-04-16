@@ -20,7 +20,7 @@
 "_auth_login_wrong_Z2iiscN" = "You have entered an invalid username or password";
 "_auth_login_facebook_naHGA" = "Facebook";
 "_auth_login_google_ZDRCot" = "Google";
-"_auth_login_social_Zf5CKP" = "Sign in by social";
+"_auth_login_social_Zf5CKP" = "Or sign in with";
 "_auth_login_sign_ZSyAJG" = "Sign Up";
 "_auth_login_signUp_ZftuGI" = "If you do not have an account, ";
 "_auth_login_forgotPassword_1pAtBW" = "Forgot password?";

@@ -5,7 +5,7 @@
             <Label class="title" text="{{'auth.otp_code' | L }}" style="margin:40" textWrap="true"></Label>
             <Label style="width: 236;font-size: 14;text-align: center;color: #ffffff;" text="{{'auth.otp_sent' | L}}"
                 textWrap="true"></Label>
-            <Label id="mobile" text="+212666****74" style="font-size: 14;text-align: center;color: #ffffff;" padding="5"
+            <Label id="mobile" [text]="mobile" style="font-size: 14;text-align: center;color: #ffffff;" padding="5"
                 textWrap="true"></Label>
 
             <WrapLayout (tap)="onFocusField($event)" padding="0" margin="0" orientation="horizontal" marginTop="20">

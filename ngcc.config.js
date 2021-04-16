@@ -13,6 +13,11 @@ module.exports = {
       ignorableDeepImportMatchers: [
         /tns-core-modules\//,
         /@nativescript\/core\//,
+        /@nativescript\/angular\//,
+        /nativescript-angular\//,
+        /nativescript-angular\/forms\//,
+        /@angular\/core\//,
+        /@angular\/forms\//,
       ]
     }
   }

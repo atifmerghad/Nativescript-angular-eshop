@@ -3,7 +3,10 @@ import { RouterExtensions } from "@nativescript/angular";
 import { device, screen, isAndroid, isIOS } from "tns-core-modules/platform";
 import { Page, EventData } from 'tns-core-modules/ui/page/page';
 import { Utils } from "./utils/helpers/utils";
-
+import { registerElement } from '@nativescript/angular';
+import { Carousel, CarouselItem } from 'nativescript-carousel';
+registerElement('Carousel', () => Carousel);
+registerElement('CarouselItem', () => CarouselItem);
 @Component({
     selector: "ns-app",
     templateUrl: "./app.component.html"
