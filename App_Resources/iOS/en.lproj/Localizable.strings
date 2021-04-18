@@ -1,6 +1,13 @@
 "_security_jailbreak_okButtonText_ZXCxgr" = "OK";
 "_security_jailbreak_message_Z1wqvti" = "This app cannot be used because you are using a jailbroken device. Contact your IT administrator for help.";
 "_security_jailbreak_title_Z1dv0SJ" = "Device Non-Compliant";
+"_dashboard_dashboard_profile_logOut_1gJKcd" = "Log out";
+"_dashboard_dashboard_profile_termsOfServices_Z1qd2oJ" = "Terms of Services";
+"_dashboard_dashboard_profile_settings_Z1jRi4j" = "Settings";
+"_dashboard_dashboard_profile_inviteFriend_Z1TJAwB" = "Invite Friends";
+"_dashboard_dashboard_profile_notifications_1hSr0u" = "Notifications";
+"_dashboard_dashboard_profile_accountInformation_1U11vA" = "Account Information";
+"_dashboard_dashboard_profile_paymentMethods_Z1yK7m7" = "Payment Methods";
 "_auth_welcome_skip_Zb8Mxe" = "Skip";
 "_auth_welcome_next_Zb9sYW" = "Next";
 "_auth_register_terms_lp0hy" = "I agree to the Terms & Cnditions";

@@ -1,6 +1,13 @@
 "_security_jailbreak_okButtonText_ZXCxgr" = "حسنا";
 "_security_jailbreak_message_Z1wqvti" = "لا يمكن استخدام هذا التطبيق لأنك تستخدم جهاز مكسور الحماية. اتصل بمسؤول تكنولوجيا المعلومات لديك للحصول على المساعدة.";
 "_security_jailbreak_title_Z1dv0SJ" = "الجهاز غير متوافق";
+"_dashboard_dashboard_profile_logOut_1gJKcd" = "تسجيل الخروج";
+"_dashboard_dashboard_profile_termsOfServices_Z1qd2oJ" = "شروط الخدمة";
+"_dashboard_dashboard_profile_settings_Z1jRi4j" = "إعدادات";
+"_dashboard_dashboard_profile_inviteFriend_Z1TJAwB" = "دعوة الأصدقاء";
+"_dashboard_dashboard_profile_notifications_1hSr0u" = "إشعارات";
+"_dashboard_dashboard_profile_accountInformation_1U11vA" = "معلومات الحساب";
+"_dashboard_dashboard_profile_paymentMethods_Z1yK7m7" = "طرق الدفع";
 "_auth_welcome_skip_Zb8Mxe" = "تخطى";
 "_auth_welcome_next_Zb9sYW" = "التالي";
 "_auth_register_terms_lp0hy" = "أنا موافق على البنود والشروط";

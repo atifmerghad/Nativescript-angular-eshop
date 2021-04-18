@@ -54,6 +54,15 @@
         "welcome_next": "Next",
         "welcome_skip": "Skip"
     },
+    "dashboard": {
+        "dashboard_profile_paymentMethods": "Payment Methods",
+        "dashboard_profile_accountInformation": "Account Information",
+        "dashboard_profile_notifications": "Notifications",
+        "dashboard_profile_inviteFriend": "Invite Friends",
+        "dashboard_profile_settings": "Settings",
+        "dashboard_profile_termsOfServices": "Terms of Services",
+        "dashboard_profile_logOut": "Log out"
+    },
     "security": {
         "jailbreak_title": "Device Non-Compliant",
         "jailbreak_message": "This app cannot be used because you are using a jailbroken device. Contact your IT administrator for help.",

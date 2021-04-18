@@ -54,6 +54,15 @@
         "welcome_next": "التالي",
         "welcome_skip": "تخطى"
     },
+    "dashboard": {
+        "dashboard_profile_paymentMethods": "طرق الدفع",
+        "dashboard_profile_accountInformation": "معلومات الحساب",
+        "dashboard_profile_notifications": "إشعارات",
+        "dashboard_profile_inviteFriend": "دعوة الأصدقاء",
+        "dashboard_profile_settings": "إعدادات",
+        "dashboard_profile_termsOfServices": "شروط الخدمة",
+        "dashboard_profile_logOut": "تسجيل الخروج"
+    },
     "security": {
         "jailbreak_title": "الجهاز غير متوافق",
         "jailbreak_message": "لا يمكن استخدام هذا التطبيق لأنك تستخدم جهاز مكسور الحماية. اتصل بمسؤول تكنولوجيا المعلومات لديك للحصول على المساعدة.",

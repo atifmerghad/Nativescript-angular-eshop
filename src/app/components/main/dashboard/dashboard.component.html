@@ -1,57 +1,86 @@
-<BottomNavigation>
-    <TabStrip>
-        <TabStripItem>
-            <Image src="~/assets/images/store.png"></Image>
-        </TabStripItem>
-        <TabStripItem>
-            <Image src="~/assets/images/explore.png"></Image>
-        </TabStripItem>
-        <TabStripItem>
-            <Image src="~/assets/images/Vector.png"></Image>
-        </TabStripItem>
-        <TabStripItem>
-            <Image src="~/assets/images/bookmark.png"></Image>
-        </TabStripItem>
-        <TabStripItem>
-            <Image src="~/assets/images/user.png"></Image>
-        </TabStripItem>
-    </TabStrip>
+<ns-page>
+    <StackLayout>
+        <BottomNavigation>
+            <TabStrip>
+                <TabStripItem>
+                    <Image src="~/assets/images/store.png"></Image>
+                </TabStripItem>
+                <TabStripItem>
+                    <Image src="~/assets/images/explore.png"></Image>
+                </TabStripItem>
+                <TabStripItem>
+                    <Image src="~/assets/images/Vector.png"></Image>
+                </TabStripItem>
+                <TabStripItem>
+                    <Image src="~/assets/images/bookmark.png"></Image>
+                </TabStripItem>
+                <TabStripItem>
+                    <Image src="~/assets/images/user.png"></Image>
+                </TabStripItem>
+            </TabStrip>
 
-    <TabContentItem>
-        <GridLayout>
-            <app-product></app-product>
-        </GridLayout>
-    </TabContentItem>
+            <TabContentItem>
+                <GridLayout>
+                    <app-product></app-product>
+                </GridLayout>
+            </TabContentItem>
 
-    <TabContentItem>
-        <GridLayout>
-            <Label text="Content 1122"></Label>
-        </GridLayout>
-    </TabContentItem>
+            <TabContentItem>
+                <GridLayout>
+                    <Label text="Content 1122"></Label>
+                </GridLayout>
+            </TabContentItem>
 
-    <TabContentItem>
-        <GridLayout>
-            <Label text="Content 2222"></Label>
-        </GridLayout>
-    </TabContentItem>
+            <TabContentItem>
+                <GridLayout>
+                    <Label text="Content 2222"></Label>
+                </GridLayout>
+            </TabContentItem>
 
-    <TabContentItem>
-        <GridLayout>
-            <Label text="Content 3333"></Label>
-        </GridLayout>
-    </TabContentItem>
+            <TabContentItem>
+                <GridLayout>
+                    <Label text="Content 3333"></Label>
+                </GridLayout>
+            </TabContentItem>
 
-    <TabContentItem>
-        <GridLayout>
-            <StackLayout margin="16">
-                <Label class=" m-12" text="First Name : Atif "></Label>
-                <Label class=" m-12" text="Last Name : Merghad"></Label>
-                <Label class=" m-12" text="Gender : Man"></Label>
-                <Label class=" m-12" text="Mobile : +212 666 840674"></Label>
-                <Label class=" m-12" text="Address : Ouezzane"></Label>
-                <Label class="btn btn-primary" text="Log out" (tap)="logOut()"></Label>
-            </StackLayout>
-        </GridLayout>
-    </TabContentItem>
+            <TabContentItem>
+                <GridLayout rows="auto,*,auto" backgroundColor="#F7F7F7">
+                    <StackLayout row="0" verticalAlignment="center">
+                        <Image width="54" height="54" borderRadius="50" src="~/assets/images/profile.png"></Image>
+                        <Label class=" m-12" fontWeight="600" text="Oliver Queen" textAlignment="center"></Label>
+                        <Label class=" m-12" text="oliver.queen@gmail.com" textAlignment="center"></Label>
+                    </StackLayout>
 
-</BottomNavigation>
+                    <FlexboxLayout row="1" flexDirection="column" marginTop="16">
+
+                        <FlexboxLayout flexDirection="column" *ngFor="let menu of mainMenu" margin="8 16"
+                            style="background: #FFF; border-radius:6;">
+                            <GridLayout columns="auto,*,auto" rows="auto" *ngFor="let item of menu.items" padding="10"
+                                verticalAlignment="center">
+                                <Image [col]="isRtl?'2':'0'" width="24" height="24"
+                                    [src]="'~/assets/images/'+item.icon"></Image>
+                                <Label col="1" class=" m-12" fontWeight="600" [text]="item.name"></Label>
+                                <Image [col]="isRtl?'0':'2'" src="~/assets/images/arrow-{{isRtl?'left':'right'}}.png"
+                                    (tap)="back()" width="24" height="24"></Image>
+                            </GridLayout>
+                        </FlexboxLayout>
+
+                    </FlexboxLayout>
+
+
+                    <StackLayout row="2" verticalAlignment="bottom" verticalAlignment="center" margin="8 16">
+                        <GridLayout [columns]="isRtl?'*,auto':'auto,*'" rows="auto"
+                            style="background: #FFF; border-radius:6;" margin="5 0 5 0" padding="10 5"
+                            verticalAlignment="center">
+                            <Image [col]="isRtl?'1':'0'" width="24" height="24" src="~/assets/images/user.png"></Image>
+                            <Label [col]="isRtl?'0':'1'" fontWeight="600" class=" m-12" text="{{ 'dashboard.dashboard_profile_logOut' | L}}
+                            " (tap)="logOut()"></Label>
+
+                        </GridLayout>
+                    </StackLayout>
+                </GridLayout>
+            </TabContentItem>
+
+        </BottomNavigation>
+    </StackLayout>
+</ns-page>

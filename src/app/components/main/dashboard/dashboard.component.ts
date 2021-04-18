@@ -5,6 +5,8 @@ import { overrideLocale } from 'nativescript-localize/localize';
 import { getString, setString, remove } from '@nativescript/core/application-settings';
 import { RouterExtensions } from "@nativescript/angular";
 import { TextField } from "tns-core-modules";
+import { Utils } from "../../../utils/helpers/utils";
+import { localize } from "nativescript-localize";
 
 
 @Component({
@@ -15,9 +17,56 @@ import { TextField } from "tns-core-modules";
 })
 export class DashboardComponent implements OnInit {
 
+    isRtl = Utils.isRtl;
+
+    mainMenu = [
+        {
+            index: 0,
+            section: 'section 1 ',
+            items: [
+                {
+                    name: localize('dashboard.dashboard_profile_paymentMethods'),
+                    url: 'my-profile',
+                    icon: 'user.png',
+                },
+                {
+                    name: localize('dashboard.dashboard_profile_accountInformation'),
+                    url: 'my-policies',
+                    icon: 'explore.png',
+                }
+            ]
+        },
+        {
+            index: 1,
+            section: 'section 2 ',
+            items: [
+                {
+                    name: localize('dashboard.dashboard_profile_notifications'),
+                    url: 'my-profile',
+                    icon: 'Vector.png',
+                },
+                {
+                    name: localize('dashboard.dashboard_profile_inviteFriend'),
+                    url: 'my-policies',
+                    icon: 'bookmark.png',
+                },
+                {
+                    name: localize('dashboard.dashboard_profile_settings'),
+                    url: 'my-policies',
+                    icon: 'store.png',
+                },
+                {
+                    name: localize('dashboard.dashboard_profile_termsOfServices'),
+                    url: 'my-policies',
+                    icon: 'store.png',
+                }
+            ]
+        }
+    ];
     constructor(
         private routerExtensions: RouterExtensions,
-        private page: Page
+        private page: Page,
+        private utils: Utils
     ) {
         this.page.actionBarHidden = true;
     }
