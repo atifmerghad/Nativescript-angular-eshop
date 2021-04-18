@@ -1,6 +1,8 @@
 "_security_jailbreak_okButtonText_ZXCxgr" = "OK";
 "_security_jailbreak_message_Z1wqvti" = "This app cannot be used because you are using a jailbroken device. Contact your IT administrator for help.";
 "_security_jailbreak_title_Z1dv0SJ" = "Device Non-Compliant";
+"_auth_welcome_skip_Zb8Mxe" = "Skip";
+"_auth_welcome_next_Zb9sYW" = "Next";
 "_auth_register_terms_lp0hy" = "I agree to the Terms & Cnditions";
 "_auth_register_hint_picture_Z1kzeVx" = "Tap to upload a photo";
 "_auth_register_picture_Z2pjHyV" = "Profile Picture (Optional)";

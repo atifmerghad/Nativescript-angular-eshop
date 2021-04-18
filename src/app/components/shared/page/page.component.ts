@@ -14,6 +14,7 @@ export class PageComponent implements OnInit, AfterViewInit {
     @Input() header?: {
         title?: string;
         description?: string;
+        router?: string;
         backEnabled?: boolean;
         scroll?: boolean;
     };

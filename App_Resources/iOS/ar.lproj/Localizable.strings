@@ -1,6 +1,8 @@
 "_security_jailbreak_okButtonText_ZXCxgr" = "حسنا";
 "_security_jailbreak_message_Z1wqvti" = "لا يمكن استخدام هذا التطبيق لأنك تستخدم جهاز مكسور الحماية. اتصل بمسؤول تكنولوجيا المعلومات لديك للحصول على المساعدة.";
 "_security_jailbreak_title_Z1dv0SJ" = "الجهاز غير متوافق";
+"_auth_welcome_skip_Zb8Mxe" = "تخطى";
+"_auth_welcome_next_Zb9sYW" = "التالي";
 "_auth_register_terms_lp0hy" = "أنا موافق على البنود والشروط";
 "_auth_register_hint_picture_Z1kzeVx" = "انقر لتحميل صورة";
 "_auth_register_picture_Z2pjHyV" = "صورة الملف الشخصي (اختياري)";

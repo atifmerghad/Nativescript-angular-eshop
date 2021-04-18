@@ -13,7 +13,7 @@ import { SharedRoutes } from './components/shared/shared-routings';
 import { AuthGuard } from "./utils/helpers/auth.guard";
 
 const routes: Routes = [
-    { path: "", redirectTo: "/dashboard", pathMatch: "full" },
+    { path: "", redirectTo: "/welcome", pathMatch: "full" },
     { path: "home", component: HomeComponent },
     { path: "welcome", component: WelcomeComponent },
     {

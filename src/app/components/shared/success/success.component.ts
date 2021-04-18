@@ -36,7 +36,7 @@ export class SuccessComponent implements OnInit {
 
 
     go() {
-        this.routerExtensions.navigate([this.redirectTo]);
+        this.routerExtensions.navigate([this.redirectTo], { clearHistory: true });
     }
 
 

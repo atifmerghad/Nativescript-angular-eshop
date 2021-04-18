@@ -17,6 +17,8 @@
 "_ios_info_plist_NSLocationWhenInUseUsageDescription_ZpKiIF" = "This will be added to InfoPlist.strings";
 "title_activity_kimera" = "App name";
 "_app_name_1k3Sbz" = "App name";
+"_auth_welcome_skip_Zb8Mxe" = "Skip";
+"_auth_welcome_next_Zb9sYW" = "Next";
 "_auth_register_terms_lp0hy" = "I agree to the Terms & Cnditions";
 "_auth_register_hint_picture_Z1kzeVx" = "Tap to upload a photo";
 "_auth_register_picture_Z2pjHyV" = "Profile Picture (Optional)";

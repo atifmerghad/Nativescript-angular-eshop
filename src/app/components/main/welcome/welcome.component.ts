@@ -5,6 +5,7 @@ import { ContentView, GridUnitType, Page, SwipeGestureEventData, } from "@native
 import { RouterExtensions } from "nativescript-angular/router";
 import * as fs from 'tns-core-modules/file-system';
 import { screen } from 'tns-core-modules/platform';
+import { Utils } from "../../../utils/helpers/utils";
 
 @Component({
     selector: "app-welcome",
@@ -16,14 +17,40 @@ export class WelcomeComponent implements OnInit, AfterViewInit {
 
     myData = new Array<any>(
         { pageNr: 1, title: 'Page 1', color: '#b3cde0', image: '~/assets/images/bookmark.png' },
-        { pageNr: 2, title: 'Page 2', color: '#6497b1', image: '~/assets/images/explore.png' },
+        { pageNr: 2, title: 'Page 2', color: '#6497b1', image: '~/assets/images/fruits.png' },
         { pageNr: 3, title: 'Page 3', color: '#005b96', image: '~/assets/images/backery.png' },
         { pageNr: 4, title: 'Page 4', color: '#03396c', image: '~/assets/04.jpg' }
-    );;
+    );
+    isRtl = Utils.isRtl;
+
+    carouselItems = [
+        {
+            title: 'Biggest Sell at Your Fingerprint',
+            title_ar: 'أكبر بيع في بصمة إصبعك',
+            subTitle: 'Find your best products from popular shop without any delay',
+            subTitle_ar: 'اعثر على أفضل منتجاتك من متجر شعبي دون أي تأخير',
+            image: '~/assets/images/meat.png'
+        },
+        {
+            title: 'Pay Secure Payment Getway',
+            title_ar: 'أكبر بيع في بصمة إصبعك',
+            subTitle: 'Find your best products from popular shop without any delay',
+            subTitle_ar: 'اعثر على أفضل منتجاتك من متجر شعبي دون أي تأخير',
+            image: '~/assets/images/fruits.png'
+        },
+        {
+            title: 'Get Faster and Safe Delivery',
+            title_ar: 'أكبر بيع في بصمة إصبعك',
+            subTitle: 'Find your best products from popular shop without any delay',
+            subTitle_ar: 'اعثر على أفضل منتجاتك من متجر شعبي دون أي تأخير',
+            image: '~/assets/images/backery.png'
+        }
+    ]
 
     constructor(
         private page: Page,
-        private nav: RouterExtensions,
+        private routerExtensions: RouterExtensions,
+        private utils: Utils
     ) {
     }
 
@@ -33,11 +60,17 @@ export class WelcomeComponent implements OnInit, AfterViewInit {
 
     i = 0;
     nextPage() {
-        this.i = this.i + 1
-        this.carouselView.nativeElement.selectedPage = this.i;
-        if (this.i > 4)
-            this.i = 0
 
+        this.i = this.i + 1
+        console.log("Page select : ", this.i);
+        this.carouselView.nativeElement.selectedPage = this.i;
+        if (this.i > 2)
+            this.routerExtensions.navigate(['/home'], { clearHistory: true });
+
+    }
+
+    skipPages() {
+        this.routerExtensions.navigate(['/home'], { clearHistory: true });
     }
     ngAfterViewInit(): void { }
 

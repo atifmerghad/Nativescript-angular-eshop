@@ -4,7 +4,7 @@
             <GridLayout rows="auto,*">
                 <!-- header -->
                 <ng-container row="0" *ngIf="header">
-                    <ns-header [title]="header.title" [description]="header.description"
+                    <ns-header [title]="header.title" [description]="header.description" [router]="header.router"
                         [backEnabled]="header.backEnabled">
                     </ns-header>
                 </ng-container>

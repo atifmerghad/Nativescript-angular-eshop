@@ -50,7 +50,9 @@
         "register_hint_password": "Password",
         "register_picture": "Profile Picture (Optional)",
         "register_hint_picture": "Tap to upload a photo",
-        "register_terms": "I agree to the Terms & Cnditions"
+        "register_terms": "I agree to the Terms & Cnditions",
+        "welcome_next": "Next",
+        "welcome_skip": "Skip"
     },
     "security": {
         "jailbreak_title": "Device Non-Compliant",

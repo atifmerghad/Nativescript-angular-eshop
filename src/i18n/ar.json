@@ -50,7 +50,9 @@
         "register_hint_password": "أدخل كلمة المرور",
         "register_picture": "صورة الملف الشخصي (اختياري)",
         "register_hint_picture": "انقر لتحميل صورة",
-        "register_terms": "أنا موافق على البنود والشروط"
+        "register_terms": "أنا موافق على البنود والشروط",
+        "welcome_next": "التالي",
+        "welcome_skip": "تخطى"
     },
     "security": {
         "jailbreak_title": "الجهاز غير متوافق",
