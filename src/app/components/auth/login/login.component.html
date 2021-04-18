@@ -49,7 +49,8 @@
                         <Button [col]="isRtl?'0':'1'" text="{{ 'auth.login_facebook' | L}}">
                         </Button>
                     </GridLayout>
-                    <GridLayout [col]="isRtl?'0':'2'" [columns]="isRtl?'*,auto':'auto,*'" class="btn btn-default">
+                    <GridLayout [col]="isRtl?'0':'2'" [columns]="isRtl?'*,auto':'auto,*'" class="btn btn-default"
+                        (tap)="loginGoogle()">
                         <Image [col]="isRtl?'1':'0'" src="~/assets/images/google.png"></Image>
                         <Button [col]="isRtl?'0':'1'" text="{{ 'auth.login_google' | L}}">
                         </Button>

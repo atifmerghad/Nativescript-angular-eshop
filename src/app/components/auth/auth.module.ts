@@ -15,6 +15,10 @@ import { ForgotUsernameComponent } from "./forgot-username/forgot-username.compo
 
 import { ReactiveFormsModule } from '@angular/forms';
 
+import { CustomRouteReuseStrategy } from "./custom-router-strategy";
+import { RouteReuseStrategy } from '@angular/router';
+
+
 @NgModule({
     declarations: [
         LoginComponent,
@@ -36,7 +40,11 @@ import { ReactiveFormsModule } from '@angular/forms';
         ReactiveFormsModule,
     ],
     providers: [
-        ModalDialogService
+        ModalDialogService,
+        {
+            provide: RouteReuseStrategy,
+            useClass: CustomRouteReuseStrategy
+        }
     ],
     schemas: [
         NO_ERRORS_SCHEMA

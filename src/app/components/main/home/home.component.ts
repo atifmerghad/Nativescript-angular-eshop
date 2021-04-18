@@ -19,6 +19,7 @@ import { androidLaunchEventLocalizationHandler } from 'nativescript-localize/loc
 export class HomeComponent implements OnInit {
 
     isRtl = Utils.isRtl;
+    loader = false;
     constructor(
         private routerExtensions: RouterExtensions,
         private page: Page,
@@ -30,15 +31,12 @@ export class HomeComponent implements OnInit {
 
 
     ngOnInit(): void {
-        const val = this.activatedRoute.snapshot.queryParams["value"]
-
-        console.log("on init ==== RTL ====> ", Utils.isRtl, val);
-        console.log("on init ==== Device Lang ====> ", Utils.deviceLanguage())
-        console.log("on init ==== App Lang ====>", Utils.getAppLanguage())
+        this.navigateTo('/home');
     }
 
 
     changeLanguage() {
+        this.loader = true;
         const deviceLang = getString('__app__language__');
         const lang = (deviceLang == 'ar') ? 'en' : 'ar';
         Utils.isRtl = (lang == 'ar');
@@ -50,37 +48,18 @@ export class HomeComponent implements OnInit {
         else {
             UIView.appearance().semanticContentAttribute = (lang == 'ar') ? forceRightToLeft : forceLeftToRight;
             UINavigationBar.appearance().semanticContentAttribute = (lang == 'ar') ? forceRightToLeft : forceLeftToRight;
-
         }
 
-        // = (lang == 'ar') ? forceRightToLeft : forceLeftToRight;
-        this.routerExtensions.navigate(['/welcome'], {
-            animated: false,
-            queryParams: {
-                value: Math.random(),
-                name: "hello",
-                link: "text===",
-                back: true
-            },
-            transition:
-            {
-                name: 'flip',
-                duration: 1000,
-                curve: 'linear'
-            }
-        })
-
+        setTimeout(() => {
+            this.loader = false;
+            this.routerExtensions.navigate(['/home1'], { animated: false })
+            this.navigateTo('/home1');
+        }, 2000)
     }
 
-    navigationOptions: { text: string; url: string }[] = [
-        { text: "Pinch To Zoom", url: "/image-zoom" },
-        { text: "RTL Layouts", url: "/rtl-layouts" },
-    ];
 
     navigateTo(url: string): void {
-        this.routerExtensions.navigateByUrl(url);
+        this.routerExtensions.navigate([url], { animated: false });
     }
-
-
 
 }

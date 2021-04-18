@@ -31,7 +31,7 @@ export class PageComponent implements OnInit, AfterViewInit {
     }
 
     ngAfterViewInit() {
-        this.allowScrolling(this.header.scroll);
+        // this.allowScrolling(this.header.scroll);
     }
 
     allowScrolling(e) {

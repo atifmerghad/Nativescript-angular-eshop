@@ -30,8 +30,11 @@ import { Utils } from './utils/helpers/utils';
 import { DashboardComponent } from "./components/main/dashboard/dashboard.component";
 import { ProductComponent } from "./components/main/product/product.component";
 
-import { RouteReuseStrategy } from "@angular/router";
 import { CustomRouteReuseStrategy } from "./custom-router-strategy";
+import { RouteReuseStrategy } from '@angular/router';
+
+
+
 import { AuthService } from "./utils/services/auth.service";
 
 
@@ -65,10 +68,6 @@ import { AuthService } from "./utils/services/auth.service";
     ],
     providers: [
         ModalDialogService,
-        {
-            provide: RouteReuseStrategy,
-            useClass: CustomRouteReuseStrategy
-        },
         AppComponent,
         AuthGuard,
         AuthService,

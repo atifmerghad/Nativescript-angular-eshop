@@ -5,6 +5,7 @@ import { Utils } from "../../../utils/helpers/utils";
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { TextField } from "@nativescript/core";
 import { getString, setString } from '@nativescript/core/application-settings';
+import { ActivatedRoute } from "@angular/router";
 
 
 @Component({
@@ -23,7 +24,8 @@ export class LoginComponent implements OnInit {
         private routerExtensions: RouterExtensions,
         private page: Page,
         private utils: Utils,
-        private formBuilder: FormBuilder
+        private formBuilder: FormBuilder,
+        private activatedRoute: ActivatedRoute
     ) {
         this.page.actionBarHidden = true;
         this.isRtl = Utils.isRtl;
@@ -33,6 +35,8 @@ export class LoginComponent implements OnInit {
 
     ngOnInit(): void {
         this.initLoginForm();
+        const val = this.activatedRoute.snapshot.queryParams["value"];
+        console.log("VALEUR : ", val)
     }
 
 
@@ -80,6 +84,21 @@ export class LoginComponent implements OnInit {
         }, 2000);
 
 
+    }
+
+    loginGoogle() {
+        var v = Math.random()
+        console.log("Google Authenticator ", v);
+
+        this.routerExtensions.navigate(['/login'], {
+            queryParams: {
+                value: v,
+                back: false
+            },
+            transition: {
+                name: this.isRtl ? 'slideLeft' : 'slideRight',
+            }
+        });
     }
 }
 
