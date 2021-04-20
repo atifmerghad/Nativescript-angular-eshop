@@ -3,13 +3,13 @@ import { NativeScriptModule } from "@nativescript/angular";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-import { ItemsComponent } from "./components/main/item/items.component";
-import { ItemDetailComponent } from "./components/main/item/item-detail.component";
-import { HomeComponent } from "./components/main/home/home.component";
-import { WelcomeComponent } from "./components/main/welcome/welcome.component";
+import { ItemsComponent } from "./screens/main/item/items.component";
+import { ItemDetailComponent } from "./screens/main/item/item-detail.component";
+import { HomeComponent } from "./screens/main/home/home.component";
+import { WelcomeComponent } from "./screens/main/welcome/welcome.component";
 import { NativeScriptLocalizeModule } from "nativescript-localize/angular";
-import { AuthGuard } from './utils/helpers/auth.guard';
-import { TokenInterceptorService } from './utils/helpers/token-interceptor.service';
+import { AuthGuard } from './core/helpers/auth.guard';
+import { TokenInterceptorService } from './core/helpers/token-interceptor.service';
 
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
@@ -21,21 +21,17 @@ import { NativeScriptFormsModule, NativeScriptRouterModule, NativeScriptCommonMo
 import { Gif } from 'nativescript-gif';
 registerElement('Gif', () => Gif);
 
-import { AuthModule } from './components/auth/auth.module';
-import { SharedModule } from './components/shared/shared.module';
+import { AuthModule } from './screens/auth/auth.module';
+import { SharedModule } from './screens/shared/shared.module';
 
-import { DashboardModule } from './components/dashboard/dashboard.module';
+import { DashboardModule } from './screens/dashboard/dashboard.module';
 
-import { Utils } from './utils/helpers/utils';
-import { DashboardComponent } from "./components/main/dashboard/dashboard.component";
-import { ProductComponent } from "./components/main/product/product.component";
-
-import { CustomRouteReuseStrategy } from "./custom-router-strategy";
-import { RouteReuseStrategy } from '@angular/router';
+import { Utils } from './core/helpers/utils';
+import { DashboardComponent } from "./screens/main/dashboard/dashboard.component";
+import { ProductComponent } from "./screens/dashboard/components/product/product.component";
 
 
-
-import { AuthService } from "./utils/services/auth.service";
+import { AuthService } from "./core/services/auth.service";
 
 
 @NgModule({

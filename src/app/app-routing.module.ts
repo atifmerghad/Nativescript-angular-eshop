@@ -2,15 +2,15 @@ import { NgModule } from "@angular/core";
 import { Routes } from "@angular/router";
 import { NativeScriptRouterModule } from "@nativescript/angular";
 
-import { HomeComponent } from "./components/main/home/home.component";
-import { ItemsComponent } from "./components/main/item/items.component";
-import { ItemDetailComponent } from "./components/main/item/item-detail.component";
-import { WelcomeComponent } from "./components/main/welcome/welcome.component";
-import { DashboardComponent } from "./components/main/dashboard/dashboard.component";
+import { HomeComponent } from "./screens/main/home/home.component";
+import { ItemsComponent } from "./screens/main/item/items.component";
+import { ItemDetailComponent } from "./screens/main/item/item-detail.component";
+import { WelcomeComponent } from "./screens/main/welcome/welcome.component";
+import { DashboardComponent } from "./screens/main/dashboard/dashboard.component";
 
-import { AuthRoutes } from './components/auth/auth-routings';
-import { SharedRoutes } from './components/shared/shared-routings';
-import { AuthGuard } from "./utils/helpers/auth.guard";
+import { AuthRoutes } from './screens/auth/auth-routings';
+import { SharedRoutes } from './screens/shared/shared-routings';
+import { AuthGuard } from "./core/helpers/auth.guard";
 
 const routes: Routes = [
     { path: "", redirectTo: "/home", pathMatch: "full" },

@@ -2,8 +2,14 @@
 
 > ### NativeScript codebase containing real examples (CRUD, auth, advanced patterns, etc).
 
+<!--
 [![Nativescript Dependency](https://img.shields.io/npm/dependency-version/nativescript-windowed-modal/dev/@nativescript/core)](https://www.npmjs.com/package/@nativescript/core)
+-->
+
 [![Visitors](https://visitor-badge.glitch.me/badge?page_id=atifmerghad.Nativescript-angular-eshop)](https://github.com/atifmerghad/Nativescript-angular-eshop)
+
+[![Nativescript](https://img.shields.io/badge/Nativescript-6-blue.svg?style=for-the-badge)]()
+[![Angular](https://img.shields.io/badge/Angular-9-red.svg?style=for-the-badge)]()
 
 This codebase was created to demonstrate a fully fledged application built with **NativeScript** including CRUD operations, authentication, routing, pagination, and more.
 
